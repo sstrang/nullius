@@ -64,7 +64,7 @@ data:extend({
   },
 
   {
-    type = "tool",
+    type = "item",
     name = "nullius-checkpoint",
     order = "nullius-y",
     icons = {
@@ -77,12 +77,9 @@ data:extend({
     hidden = true,
     subgroup = "other",
     stack_size = 1,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
-    type = "tool",
+    type = "item",
     name = "nullius-requirement-build",
     order = "nullius-arb",
     icons = {
@@ -95,12 +92,9 @@ data:extend({
 	  hidden = true,
     subgroup = "other",
     stack_size = 1,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
-    type = "tool",
+    type = "item",
     name = "nullius-requirement-consume",
     order = "nullius-arc",
     icons = {
@@ -112,13 +106,10 @@ data:extend({
 	  hidden = true,
     subgroup = "other",
     stack_size = 1,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
 
   {
-    type = "tool",
+    type = "item",
     name = "nullius-geology-pack",
     order = "nullius-b",
     icons = {
@@ -138,9 +129,6 @@ data:extend({
     },
     subgroup = "research-pack",
     stack_size = 200,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
     type = "recipe",
@@ -222,7 +210,7 @@ data:extend({
   },
 
   {
-    type = "tool",
+    type = "item",
     name = "nullius-mechanical-pack",
     order = "nullius-d",
     icons = {
@@ -242,9 +230,6 @@ data:extend({
     },
     subgroup = "research-pack",
     stack_size = 200,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
     type = "recipe",
@@ -363,7 +348,7 @@ data:extend({
   },
 
   {
-    type = "tool",
+    type = "item",
     name = "nullius-electrical-pack",
     order = "nullius-e",
     icons = {
@@ -383,9 +368,6 @@ data:extend({
     },
     subgroup = "research-pack",
     stack_size = 200,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
     type = "recipe",
@@ -510,7 +492,7 @@ data:extend({
   },
 
   {
-    type = "tool",
+    type = "item",
     name = "nullius-physics-pack",
     icons = {
       {
@@ -529,9 +511,6 @@ data:extend({
     subgroup = "research-pack",
     order = "nullius-g",
     stack_size = 200,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
     type = "recipe",
@@ -561,7 +540,7 @@ data:extend({
   },
 
   {
-    type = "tool",
+    type = "item",
     name = "nullius-astronomy-pack",
     icons = {
       {
@@ -574,9 +553,6 @@ data:extend({
     subgroup = "research-pack",
     order = "nullius-h",
     stack_size = 200,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
 
   {

@@ -1089,7 +1089,7 @@ data:extend({
 
 data:extend({
   {
-    type = "tool",
+    type = "item",
     name = "nullius-climatology-pack",
     order = "nullius-c",
     icons = {
@@ -1109,9 +1109,6 @@ data:extend({
     },
     subgroup = "research-pack",
     stack_size = 200,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
     type = "recipe",
@@ -1196,7 +1193,7 @@ data:extend({
   },
 
   {
-    type = "tool",
+    type = "item",
     name = "nullius-chemical-pack",
     order = "nullius-f",
     icon = "__base__/graphics/icons/logistic-science-pack.png",
@@ -1204,9 +1201,6 @@ data:extend({
     
     subgroup = "research-pack",
     stack_size = 200,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
     type = "recipe",

@@ -233,7 +233,7 @@ data:extend({
     absorptions_per_second = {pollution = 0},
     --ageing=0,
     vehicle_friction_modifier = 0.7,
-    placeable_by = {item = "nullius-refractory-brick", count = 1},
+    placeable_by = {type = "item", name = "nullius-refractory-brick", count = 1},
     transitions = data.raw.tile["stone-path"].transitions,
     transitions_between_transitions = data.raw.tile["stone-path"].transitions_between_transitions
   },
@@ -284,8 +284,8 @@ data:extend({
       }
     },
     loot = {
-      {item = "nullius-silica", probability = 1, count_min = 4, count_max = 12},
-      {item = "nullius-alumina", probability = 1, count_min = 2, count_max = 6}
+      {type = "item", name = "nullius-silica", probability = 1, amount_min = 4, amount_max = 12},
+      {type = "item", name = "nullius-alumina", probability = 1, amount_min = 2, amount_max = 6}
     },
     count_as_rock_for_filtered_deconstruction = true,
     mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },

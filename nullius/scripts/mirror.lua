@@ -13,9 +13,13 @@ end
 
 function save_fluid_contents(entity)
   local ret = { }
-  if ((entity ~= nil) and entity.valid and (entity.fluidbox ~= nil)) then
-    for i = 1, #entity.fluidbox do
-	  ret[i] = entity.fluidbox[i]
+  if ((entity ~= nil) and entity.valid) then
+    local proto = entity.get_fluid_box_prototype()
+    if (proto ~= nil) then
+      local count = (type(proto) == "table" and proto[1] and #proto) or 1
+      for i = 1, count do
+        ret[i] = entity.get_fluid(i)
+      end
     end
   end
   return ret
@@ -24,7 +28,9 @@ end
 function restore_fluid_contents(entity, contents)
   if ((entity ~= nil) and entity.valid and (contents ~= nil)) then
     for i = 1, #contents do
-      entity.fluidbox[i] = contents[i]
+      if (contents[i] ~= nil) then
+        entity.set_fluid(i, contents[i])
+      end
     end
   end
 end

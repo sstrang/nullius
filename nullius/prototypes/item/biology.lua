@@ -5371,7 +5371,7 @@ data:extend({
   },
 
   {
-    type = "tool",
+    type = "item",
     name = "nullius-biochemistry-pack",
     order = "nullius-xb",
     icons = {
@@ -5393,12 +5393,9 @@ data:extend({
     },
     subgroup = "biology-research",
     stack_size = 20,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
-    type = "tool",
+    type = "item",
     name = "nullius-microbiology-pack",
     order = "nullius-xc",
     icons = {
@@ -5420,12 +5417,9 @@ data:extend({
     },
     subgroup = "biology-research",
     stack_size = 20,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
-    type = "tool",
+    type = "item",
     name = "nullius-botany-pack",
     order = "nullius-xd",
     icons = {
@@ -5447,12 +5441,9 @@ data:extend({
     },
     subgroup = "biology-research",
     stack_size = 20,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
-    type = "tool",
+    type = "item",
     name = "nullius-dendrology-pack",
     order = "nullius-xe",
     icons = {
@@ -5475,12 +5466,9 @@ data:extend({
     },
     subgroup = "biology-research",
     stack_size = 20,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
-    type = "tool",
+    type = "item",
     name = "nullius-nematology-pack",
     order = "nullius-xf",
     icons = {
@@ -5503,12 +5491,9 @@ data:extend({
     },
     subgroup = "biology-research",
     stack_size = 20,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
-    type = "tool",
+    type = "item",
     name = "nullius-ichthyology-pack",
     order = "nullius-xg",
     icons = {
@@ -5531,12 +5516,9 @@ data:extend({
     },
     subgroup = "biology-research",
     stack_size = 20,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {
-    type = "tool",
+    type = "item",
     name = "nullius-zoology-pack",
     order = "nullius-xh",
     icons = {
@@ -5558,9 +5540,6 @@ data:extend({
     },
     subgroup = "biology-research",
     stack_size = 20,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value"
   },
 
   {

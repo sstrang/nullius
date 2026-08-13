@@ -27,7 +27,7 @@ local function create_turbine_recipe(fluidname, exhaust, energy, counto, countc,
   local closed = util.table.deepcopy(open)
   closed.name = "nullius-burn-closed-" .. fluidname
   closed.localised_name = {"recipe-name.nullius-turbine-burn-closed", {"fluid-name."..fullfluid}}
-  closed.category = "turbine-closed"
+  closed.categories = {"turbine-closed"}
   closed.subgroup = "turbine-closed"
   closed.ingredients[1].amount = countc
   closed.results[1].amount = energycountc

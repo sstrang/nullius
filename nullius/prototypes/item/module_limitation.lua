@@ -24,7 +24,7 @@ for _,recipe in pairs(data.raw.recipe) do
   if (((string.sub(recipe.name, 1, 8) == "nullius-") or ((recipe.order ~= nil) and
         (string.sub(recipe.order, 1, 8) == "nullius-"))) and
       (recipe.no_productivity ~= true) and
-      (nullius_non_productivity_categories[recipe.category] ~= true)) then
+      (recipe.categories == nil or nullius_non_productivity_categories[recipe.categories[1]] ~= true)) then
     recipe.allow_productivity = true
   end
   recipe.no_productivity = nil

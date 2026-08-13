@@ -108,8 +108,12 @@ local function set_furnace_idle(proto, overlay, tint)
 end
 
 local function set_generator_animation(proto, overlay, tint)
-  proto.horizontal_animation = turbine_animation(false, overlay, tint)
-  proto.vertical_animation = turbine_animation(true, overlay, tint)
+  proto.pictures = {
+    north = turbine_animation(true, overlay, tint),
+    east = turbine_animation(false, overlay, tint),
+    south = turbine_animation(true, overlay, tint),
+    west = turbine_animation(false, overlay, tint)
+  }
 end
 
 local function finish_furnace(furnace, generator, overlay,
@@ -315,8 +319,12 @@ local generator1ob = {
     performance_to_activity_rate = 0.5
   },
   
-  horizontal_animation = generator_horizontal,
-  vertical_animation = generator_vertical,
+  pictures = {
+    north = generator_vertical,
+    east = generator_horizontal,
+    south = generator_vertical,
+    west = generator_horizontal
+  },
   fluid_box = {
     filter = "nullius-energy",
     production_type = "input",

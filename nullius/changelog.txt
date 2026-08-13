@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.0
+Date: 13.08.2026
+  Features:
+    - Updated for Factorio 2.1 compatibility
+  Changes:
+    - Migrated all science packs from type "tool" to type "item" (Factorio 2.1 changed science packs to plain items)
+    - Converted recipe category definitions from single "category" to "categories" array format
+    - Renamed vehicle prototype properties: braking_power → braking_force, friction → friction_force
+    - Replaced forced_symmetry with use_mirroring on crafting machines
+    - Moved Generator horizontal_animation/vertical_animation into pictures table
+    - Migrated fluid save/restore from LuaFluidBox API to new LuaEntity fluid methods
+    - Migrated entity.active write to disabled_by_script, entity.minable write to minable_flag
+    - Converted loot entries to ItemProductPrototype format (item → name, count_min → amount_min)
+    - Removed deprecated recipe prototype properties (show_amount_in_title, always_show_products)
+    - Moved FluidBox hide_connection_info to PipeConnectionDefinition level
+    - Removed deprecated pump properties (fluid_wagon_connector_alignment_tolerance, fluid_wagon_connector_graphics)
+    - Removed max_fluid_flow utility constant (derived from FluidBox volume in 2.1)
+---------------------------------------------------------------------------------------------------
 Version: 2.0.9
 Date: 09.06.2026
   Features:

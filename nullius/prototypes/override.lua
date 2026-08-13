@@ -984,7 +984,6 @@ if settings.startup["nullius-hide-void-alt"].value then
   end
 end
 
-data.raw["utility-constants"]["default"].max_fluid_flow = 500
 
 data.raw["artillery-flare"]["artillery-flare"].shot_category = "artillery-shell" --regular remote will only fire artillery shells
 data.raw["custom-input"]["give-artillery-targeting-remote"].enabled = false
