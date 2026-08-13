@@ -125,6 +125,6 @@ end
 -- From Alien Biomes
 if (data.raw["simple-entity"]["sand-big-rock-white"] ~= nil) then
   table.insert(data.raw["simple-entity"]["sand-big-rock-white"].minable.results,
-    {type="item", name="nullius-soda-ash", probability=0.1, amount_min=1, amount_max=2}
+    {type="item", name="nullius-soda-ash", independent_probability=0.1, amount_min=1, amount_max=2}
   )
 end

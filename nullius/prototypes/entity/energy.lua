@@ -3472,6 +3472,7 @@ data:extend({
     dying_explosion = "nuclear-reactor-explosion",
     consumption = "50MW",
     neighbour_bonus = 0.5,
+    neighbour_connectable = data.raw.reactor["nuclear-reactor"].neighbour_connectable,
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     damaged_trigger_effect = data.raw.reactor["nuclear-reactor"].damaged_trigger_effect,
@@ -3532,6 +3533,14 @@ data:extend({
     consumption = "150W",
     energy_source = { type = "void" },
     neighbour_bonus = 0.1,
+    neighbour_connectable = {
+      connections = {
+        { location = { position = { 0,   -2 }, direction = defines.direction.north }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = { 2.5,  0  }, direction = defines.direction.east  }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = { 0,    2  }, direction = defines.direction.south }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = {-2.5,  0  }, direction = defines.direction.west  }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+      }
+    },
     --neighbour_collision_increase = 0.1,
     -- circuit_connector = circuit_connector_definitions["nullius-solar-collector"], -- we decided not to have circuit connections for this building
     -- circuit_wire_max_distance = reactor_circuit_wire_max_distance,
@@ -3612,6 +3621,14 @@ data:extend({
     consumption = "300W",
     energy_source = { type = "void" },
     neighbour_bonus = 0.1,
+    neighbour_connectable = {
+      connections = {
+        { location = { position = { 0,   -2 }, direction = defines.direction.north }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = { 2.5,  0  }, direction = defines.direction.east  }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = { 0,    2  }, direction = defines.direction.south }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = {-2.5,  0  }, direction = defines.direction.west  }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+      }
+    },
     --neighbour_collision_increase = 0.1,
     -- circuit_connector = circuit_connector_definitions["nullius-solar-collector"],
     -- circuit_wire_max_distance = reactor_circuit_wire_max_distance,
@@ -3691,6 +3708,14 @@ data:extend({
     consumption = "600W",
     energy_source = { type = "void" },
     neighbour_bonus = 0.1,
+    neighbour_connectable = {
+      connections = {
+        { location = { position = { 0,   -2 }, direction = defines.direction.north }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = { 2.5,  0  }, direction = defines.direction.east  }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = { 0,    2  }, direction = defines.direction.south }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+        { location = { position = {-2.5,  0  }, direction = defines.direction.west  }, category = "nullius-solar-collector", neighbour_category = {"nullius-solar-collector"} },
+      }
+    },
     --neighbour_collision_increase = 0.1,
     -- circuit_connector = circuit_connector_definitions["nullius-solar-collector"],
     -- circuit_wire_max_distance = reactor_circuit_wire_max_distance,

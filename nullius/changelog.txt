@@ -16,6 +16,10 @@ Date: 13.08.2026
     - Moved FluidBox hide_connection_info to PipeConnectionDefinition level
     - Removed deprecated pump properties (fluid_wagon_connector_alignment_tolerance, fluid_wagon_connector_graphics)
     - Removed max_fluid_flow utility constant (derived from FluidBox volume in 2.1)
+    - Migrated recipe/minable/loot product probability → independent_probability
+    - Added neighbour_connectable to reactors with neighbour_bonus (2.1 removed automatic edge-touching connections)
+    - Migrated logistic-container animation_sound/opened_duration to robot_door table
+    - Migrated MineEntityTechnologyTrigger entity → entities (array)
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.9
 Date: 09.06.2026
