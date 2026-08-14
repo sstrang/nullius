@@ -139,12 +139,14 @@ data:extend({
     },
     light = {intensity = 0.5, size = 6},
     animation = {
-      filename = "__base__/graphics/entity/laser/laser-to-tint-medium.png",
+      filename = "__base__/graphics/entity/laser-turret/laser-body.png",
       draw_as_glow = true,
       tint = {r=0.0, g=0.2, b=1.0},
-      frame_count = 1,
-      width = 12,
-      height = 33,
+      frame_count = 8,
+      line_length = 8,
+      width = 64,
+      height = 12,
+      scale = 0.5,
       priority = "high",
       blend_mode = "additive"
     }

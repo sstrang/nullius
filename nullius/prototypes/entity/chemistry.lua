@@ -937,6 +937,25 @@ data.raw["assembling-machine"]["nullius-hydro-plant-2"].graphics_set.working_vis
 data.raw["assembling-machine"]["nullius-hydro-plant-3"].graphics_set.working_visualisations[4] = nil
 data.raw["assembling-machine"]["nullius-hydro-plant-3"].graphics_set.working_visualisations[5] = nil
 
+-- Factorio 2.1: base oil-refinery sprites were reorganized into per-direction
+-- folders, so the old flat spritesheet no longer exists. Reuse vanilla's
+-- animation (which references the new paths) with a tint on non-shadow layers.
+local function nullius_refinery_animation(tint)
+  local anim = util.table.deepcopy(
+    data.raw["assembling-machine"]["oil-refinery"].graphics_set.animation)
+  for _, direction in pairs({"north", "east", "south", "west"}) do
+    local layers = ((anim[direction] ~= nil) and anim[direction].layers) or nil
+    if (layers ~= nil) then
+      for _, layer in pairs(layers) do
+        if (not layer.draw_as_shadow) then
+          layer.tint = tint
+        end
+      end
+    end
+  end
+  return anim
+end
+
 data:extend({
   {
     type = "assembling-machine",
@@ -1031,29 +1050,7 @@ data:extend({
         },
       },
   
-      animation = make_4way_animation_from_spritesheet({
-        layers = {
-          {
-              filename = BASEENTITY .. "oil-refinery/oil-refinery.png",
-              width = 386,
-              height = 430,
-              frame_count = 1,
-              shift = util.by_pixel(0, -7.5),
-              scale = 0.5,
-              tint = {0.77, 0.77, 0.66, 1}
-          },
-          {
-              filename = BASEENTITY .. "oil-refinery/oil-refinery-shadow.png",
-              width = 674,
-              height = 426,
-              frame_count = 1,
-              shift = util.by_pixel(82.5, 26.5),
-              draw_as_shadow = true,
-              force_hr_shadow = true,
-              scale = 0.5
-          }
-        }
-      })
+      animation = nullius_refinery_animation({0.77, 0.77, 0.66, 1})
     }
   }
 })
@@ -1130,29 +1127,7 @@ data:extend({
     },
 
     graphics_set = {
-      animation = make_4way_animation_from_spritesheet({
-        layers = {
-          {
-              filename = BASEENTITY .. "oil-refinery/oil-refinery.png",
-              width = 386,
-              height = 430,
-              frame_count = 1,
-              shift = util.by_pixel(0, -7.5),
-              scale = 0.5,
-              tint = {0.8, 0.8, 1, 1}
-          },
-          {
-              filename = BASEENTITY .. "oil-refinery/oil-refinery-shadow.png",
-              width = 674,
-              height = 426,
-              frame_count = 1,
-              shift = util.by_pixel(82.5, 26.5),
-              draw_as_shadow = true,
-              force_hr_shadow = true,
-              scale = 0.5
-          }
-        }
-      }),
+      animation = nullius_refinery_animation({0.8, 0.8, 1, 1}),
       working_visualisations = data.raw["assembling-machine"]["nullius-distillery-1"].graphics_set.working_visualisations,
     }
   },
