@@ -233,7 +233,7 @@ data:extend({
     absorptions_per_second = {pollution = 0},
     --ageing=0,
     vehicle_friction_modifier = 0.7,
-    placeable_by = {type = "item", name = "nullius-refractory-brick", count = 1},
+    placeable_by = {item = "nullius-refractory-brick", count = 1},
     transitions = data.raw.tile["stone-path"].transitions,
     transitions_between_transitions = data.raw.tile["stone-path"].transitions_between_transitions
   },
