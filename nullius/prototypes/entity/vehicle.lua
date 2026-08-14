@@ -534,6 +534,9 @@ data:extend({
     lamp_energy_usage = "200kW",
     active_energy_usage = "2600kW",
     rocket_entity = "rocket-silo-rocket",
+    -- Factorio 2.1: copied working_sound sound_accents reference working visualisation
+    -- "crafting", which must exist in graphics_set (validated on load)
+    graphics_set = util.table.deepcopy(data.raw["rocket-silo"]["rocket-silo"].graphics_set),
     times_to_blink = 3,
     light_blinking_speed = 1 / (3 * 60),
     door_opening_speed = 1 / (4.25 * 60),
