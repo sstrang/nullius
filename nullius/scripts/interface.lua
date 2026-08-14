@@ -190,4 +190,34 @@ function on_load_mod_interface()
       remote.call("PickerDollies", "add_blacklist_name", "nullius-beacon-3-4")
 	end
   end
+
+  if (remote.interfaces["DiscoScience"] and
+      remote.interfaces["DiscoScience"]["setIngredientColor"]) then
+    -- Register Nullius science pack colours with Disco Science so research
+    -- animations use the pack colours instead of the magenta fallback.
+    local disco_pack_colours = {
+      {"nullius-geology-pack",      {r = 0.60, g = 0.40, b = 0.20}},
+      {"nullius-climatology-pack",  {r = 0.28, g = 0.93, b = 0.95}},
+      {"nullius-mechanical-pack",   {r = 0.91, g = 0.16, b = 0.20}},
+      {"nullius-electrical-pack",   {r = 0.83, g = 0.06, b = 0.92}},
+      {"nullius-chemical-pack",     {r = 0.29, g = 0.97, b = 0.31}},
+      {"nullius-physics-pack",      {r = 0.60, g = 0.30, b = 0.20}},
+      {"nullius-astronomy-pack",    {r = 0.75, g = 0.72, b = 0.78}},
+      {"nullius-biochemistry-pack", {r = 0.55, g = 0.35, b = 0.55}},
+      {"nullius-microbiology-pack", {r = 0.55, g = 0.35, b = 0.55}},
+      {"nullius-botany-pack",       {r = 0.45, g = 0.70, b = 0.30}},
+      {"nullius-nematology-pack",   {r = 0.85, g = 0.45, b = 0.45}},
+      {"nullius-ichthyology-pack",  {r = 0.30, g = 0.55, b = 0.85}},
+      {"nullius-dendrology-pack",   {r = 0.45, g = 0.50, b = 0.25}},
+      {"nullius-zoology-pack",      {r = 0.60, g = 0.40, b = 0.30}},
+      -- milestone/checkpoint lab ingredients (not science packs, but consumed
+      -- by labs for progress research - give them neutral colours)
+      {"nullius-checkpoint",        {r = 0.75, g = 0.75, b = 0.75}},
+      {"nullius-requirement-build", {r = 0.30, g = 0.55, b = 0.85}},
+      {"nullius-requirement-consume", {r = 0.90, g = 0.65, b = 0.20}}
+    }
+    for _, entry in pairs(disco_pack_colours) do
+      remote.call("DiscoScience", "setIngredientColor", entry[1], entry[2])
+    end
+  end
 end
