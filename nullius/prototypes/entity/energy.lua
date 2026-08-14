@@ -1038,6 +1038,7 @@ data:extend({
       }
     },
 
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1175,6 +1176,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["nullius-compressor"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
     
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1325,6 +1327,7 @@ data:extend({
       }
     },
 
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1462,6 +1465,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["nullius-compressor"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
     
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1578,6 +1582,7 @@ data:extend({
       }
     },
 
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1724,6 +1729,7 @@ data:extend({
       }
     },
 
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {

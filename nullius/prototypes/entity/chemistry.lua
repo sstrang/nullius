@@ -85,6 +85,7 @@ data:extend({
     allowed_effects = {"speed", "productivity", "consumption", "pollution"},
     circuit_connector = circuit_connector_definitions["nullius-hydro-plant"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+	  use_mirroring = true,
 	  graphics_set = {
 	    animation = hydro_animation({0.77, 0.77, 0.68}),
 	    working_visualisations = scale_image({
@@ -377,6 +378,7 @@ data:extend({
     next_upgrade = "nullius-hydro-plant-3",
     circuit_connector = circuit_connector_definitions["nullius-hydro-plant"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+	  use_mirroring = true,
 	  graphics_set = {
 	    	animation = hydro_animation({0.8, 0.8, 0.9}),
 	      working_visualisations = scale_image({
@@ -666,6 +668,7 @@ data:extend({
     fast_replaceable_group = "hydro-plant",
     circuit_connector = circuit_connector_definitions["nullius-hydro-plant"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+	  use_mirroring = true,
 	  graphics_set = {
 	      animation = hydro_animation(),
 	      working_visualisations = scale_image({
@@ -1049,6 +1052,7 @@ data:extend({
     fast_replaceable_group = "distillery",
     next_upgrade = "nullius-distillery-2",
 
+    use_mirroring = true,
     graphics_set = {
       working_visualisations = {
         {
@@ -1147,6 +1151,7 @@ data:extend({
       }
     },
 
+    use_mirroring = true,
     graphics_set = {
       animation = nullius_refinery_animation({0.8, 0.8, 1, 1}),
       working_visualisations = data.raw["assembling-machine"]["nullius-distillery-1"].graphics_set.working_visualisations,
@@ -1188,6 +1193,7 @@ data:extend({
     fast_replaceable_group = "distillery",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["oil-refinery"],
+    use_mirroring = true,
     graphics_set = {
       animation = data.raw["assembling-machine"]["oil-refinery"].graphics_set.animation,
       working_visualisations = data.raw["assembling-machine"]["nullius-distillery-1"].graphics_set.working_visualisations,
@@ -1275,6 +1281,7 @@ data:extend({
     },
     circuit_connector = circuit_connector_definitions["nullius-electrolyser"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1396,6 +1403,7 @@ data:extend({
     fluid_boxes = data.raw["assembling-machine"]["nullius-surge-electrolyzer-1"].fluid_boxes,
     circuit_connector = circuit_connector_definitions["nullius-electrolyser"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1489,6 +1497,7 @@ data:extend({
     },
     circuit_connector = circuit_connector_definitions["nullius-electrolyser"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1606,6 +1615,7 @@ data:extend({
     fluid_boxes = data.raw["assembling-machine"]["nullius-surge-electrolyzer-2"].fluid_boxes,
     circuit_connector = circuit_connector_definitions["nullius-electrolyser"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1697,6 +1707,7 @@ data:extend({
     },
     circuit_connector = circuit_connector_definitions["nullius-electrolyser"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1809,6 +1820,7 @@ data:extend({
     fluid_boxes = data.raw["assembling-machine"]["nullius-surge-electrolyzer-3"].fluid_boxes,
     circuit_connector = circuit_connector_definitions["nullius-electrolyser"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -1881,6 +1893,7 @@ data:extend({
     allowed_effects = {"speed", "productivity", "consumption", "pollution"},
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chemical-plant"],
+    use_mirroring = true,
     graphics_set = {
       animation = nullius_chemical_plant_animation({0.75, 0.75, 0.6, 1}),
       working_visualisations = {
@@ -2088,6 +2101,7 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chemical-plant"],
 
+    use_mirroring = true,
     graphics_set = {
       animation = nullius_chemical_plant_animation({0.8, 0.8, 1, 1}),
       working_visualisations = data.raw["assembling-machine"]["nullius-chemical-plant-1"].graphics_set.working_visualisations,
@@ -2167,6 +2181,7 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chemical-plant"],
     
+    use_mirroring = true,
     graphics_set = {
       animation = nullius_chemical_plant_animation(nil),
       working_visualisations = data.raw["assembling-machine"]["nullius-chemical-plant-1"].graphics_set.working_visualisations,
