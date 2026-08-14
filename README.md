@@ -25,34 +25,51 @@ see [Reporting bugs](#reporting-bugs) below.
 
 **Important:** the mod does not live at the root of this repository. It's in
 the `nullius/` subdirectory (the repo also bundles the `safefill/` and
-`train-upgrader/` mods). You cannot just clone the repo into your mods folder
-— Factorio looks for `info.json` at the top level and will silently ignore a
-bare clone.
+`train-upgrader/` mods). You cannot just drop the whole repo into your mods
+folder — Factorio looks for `info.json` at the top level and will silently
+ignore it. The final folder must be named `nullius_2.1.0` (that's the
+`name_version` format Factorio expects).
 
-Do this instead (macOS/Linux; adjust the mods path for your platform):
+### No command line? Point-and-click method
+
+1. Go to <https://github.com/sstrang/nullius> and click the green
+   **Code** button, then **Download ZIP**.
+2. Extract the zip (Windows: right-click → *Extract All*; macOS: double-click).
+3. Open the extracted folder. You'll see several subfolders — the one you
+   want is **`nullius`** (ignore `safefill/` and `train-upgrader/`).
+4. Copy the `nullius` folder into your Factorio **mods** folder:
+   - Windows: press <kbd>Win</kbd>+<kbd>R</kbd>, type `%APPDATA%\Factorio\mods`, Enter
+   - macOS: in Finder press <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> and
+     paste `~/Library/Application Support/factorio/mods`
+   - Linux: `~/.factorio/mods`
+5. Rename the copied folder from `nullius` to **`nullius_2.1.0`**.
+6. Start Factorio, go to **Mods** in the main menu, and tick the Nullius
+   checkbox to enable it (the game will also list any missing dependency
+   mods — install those from the mod portal and it'll work).
+
+To update later: repeat steps 1–5, replacing the old `nullius_2.1.0` folder.
+
+### Terminal method (macOS/Linux)
 
 ```bash
-cd ~/Library/Application\ Support/factorio/mods   # Windows: %APPDATA%\Factorio\mods
+cd ~/Library/Application\ Support/factorio/mods   # Linux: ~/.factorio/mods
 git clone https://github.com/sstrang/nullius.git nullius-src
 ln -s nullius-src/nullius nullius_2.1.0
 ```
 
-The symlink is named `nullius_2.1.0` to match the `name_version` folder
-format Factorio expects. To update later:
+To update later:
 
 ```bash
 cd nullius-src && git pull
 ```
 
-Windows note: if you can't create symlinks, copy the `nullius/` folder out of
-the clone instead:
+### Terminal method (Windows)
 
 ```bash
+cd %APPDATA%\Factorio\mods
 git clone https://github.com/sstrang/nullius.git
 xcopy /E /I nullius\nullius nullius_2.1.0
 ```
-
-Then put `nullius_2.1.0` in your mods folder and enable the mod in-game.
 
 ## Reporting bugs
 
