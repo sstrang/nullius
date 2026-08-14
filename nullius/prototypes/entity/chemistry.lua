@@ -956,6 +956,27 @@ local function nullius_refinery_animation(tint)
   return anim
 end
 
+-- Factorio 2.1: base chemical plant sprites reworked into per-direction
+-- -base/-anim layers; the old flat spritesheet no longer exists. Reuse
+-- vanilla's resolved animation (new paths) with an optional tint.
+local function nullius_chemical_plant_animation(tint)
+  local anim = util.table.deepcopy(
+    data.raw["assembling-machine"]["chemical-plant"].graphics_set.animation)
+  if (tint ~= nil) then
+    for _, direction in pairs({"north", "east", "south", "west"}) do
+      local layers = ((anim[direction] ~= nil) and anim[direction].layers) or nil
+      if (layers ~= nil) then
+        for _, layer in pairs(layers) do
+          if (not layer.draw_as_shadow) then
+            layer.tint = tint
+          end
+        end
+      end
+    end
+  end
+  return anim
+end
+
 data:extend({
   {
     type = "assembling-machine",
@@ -1861,29 +1882,7 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chemical-plant"],
     graphics_set = {
-      animation = make_4way_animation_from_spritesheet({ layers =
-      {
-        {
-            filename = BASEENTITY .. "chemical-plant/chemical-plant.png",
-            width = 220,
-            height = 292,
-            frame_count = 24,
-            line_length = 12,
-            shift = util.by_pixel(1.5, -9),
-            scale = 0.52,
-            tint = {0.75, 0.75, 0.6, 1}
-        },
-        {
-            filename = BASEENTITY .. "chemical-plant/chemical-plant-shadow.png",
-            width = 312,
-            height = 222,
-            repeat_count = 24,
-            frame_count = 1,
-            shift = util.by_pixel(27, 6),
-            draw_as_shadow = true,
-            scale = 0.52
-        }
-      }}),
+      animation = nullius_chemical_plant_animation({0.75, 0.75, 0.6, 1}),
       working_visualisations = {
         {
           apply_recipe_tint = "primary",
@@ -2090,29 +2089,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["chemical-plant"],
 
     graphics_set = {
-      animation = make_4way_animation_from_spritesheet({ layers =
-      {
-        {
-            filename = BASEENTITY .. "chemical-plant/chemical-plant.png",
-            width = 220,
-            height = 292,
-            frame_count = 24,
-            line_length = 12,
-            shift = util.by_pixel(1.5, -9),
-            scale = 0.52,
-            tint = {0.8, 0.8, 1, 1}
-        },
-        {
-            filename = BASEENTITY .. "chemical-plant/chemical-plant-shadow.png",
-            width = 312,
-            height = 222,
-            repeat_count = 24,
-            frame_count = 1,
-            shift = util.by_pixel(27, 6),
-            draw_as_shadow = true,
-            scale = 0.52
-        }
-      }}),
+      animation = nullius_chemical_plant_animation({0.8, 0.8, 1, 1}),
       working_visualisations = data.raw["assembling-machine"]["nullius-chemical-plant-1"].graphics_set.working_visualisations,
     },
     resistances = {
@@ -2191,28 +2168,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["chemical-plant"],
     
     graphics_set = {
-      animation = make_4way_animation_from_spritesheet({ layers =
-      {
-        {
-            filename = BASEENTITY .. "chemical-plant/chemical-plant.png",
-            width = 220,
-            height = 292,
-            frame_count = 24,
-            line_length = 12,
-            shift = util.by_pixel(1.5, -9),
-            scale = 0.52,
-        },
-        {
-            filename = BASEENTITY .. "chemical-plant/chemical-plant-shadow.png",
-            width = 312,
-            height = 222,
-            repeat_count = 24,
-            frame_count = 1,
-            shift = util.by_pixel(27, 6),
-            draw_as_shadow = true,
-            scale = 0.52
-        }
-      }}),
+      animation = nullius_chemical_plant_animation(nil),
       working_visualisations = data.raw["assembling-machine"]["nullius-chemical-plant-1"].graphics_set.working_visualisations,
     },
     resistances = {
