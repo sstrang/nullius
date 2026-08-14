@@ -163,19 +163,30 @@ for _,fluid in pairs(data.raw.fluid) do
   end
 end
 
+-- Resolve an item name across all item types (rolling stock and others are
+-- "item-with-entity-data", not plain "item", so a data.raw.item lookup misses them)
+local function find_item(itemname)
+  if itemname == nil then return nil end
+  for _,itype in pairs(item_types_list) do
+    local item = data.raw[itype][itemname]
+    if item ~= nil then return item end
+  end
+  return nil
+end
+
 for _,type in pairs(building_types_list) do
   for _,entity in pairs(data.raw[type]) do
     if entity.next_upgrade ~= nil then
       local next_entity = data.raw[type][entity.next_upgrade]
       if (next_entity ~= nil) and next_entity.minable ~= nil then
-        local item = data.raw.item[next_entity.minable.result]
+        local item = find_item(next_entity.minable.result)
         if (item ~= nil) and item.hidden then
           entity.next_upgrade = nil
         end
       end
     end
     if entity.minable ~= nil then
-      local item = data.raw.item[entity.minable.result]
+      local item = find_item(entity.minable.result)
       if (item ~= nil) and item.hidden then
         entity.next_upgrade = nil
         entity.hidden = true
