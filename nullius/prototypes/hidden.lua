@@ -70,7 +70,6 @@ item_types_list = {
   "capsule",
   "module",
   "rail-planner",
-  "tool",
   "armor",
   "item-with-entity-data",
   "repair-tool",

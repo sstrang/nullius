@@ -6,7 +6,6 @@ local boxed_item_type_list = {
   "capsule",
   "module",
   "rail-planner",
-  "tool",
   "repair-tool"
 }
 
