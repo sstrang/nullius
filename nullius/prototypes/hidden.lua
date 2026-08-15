@@ -125,7 +125,7 @@ for _, recipe in pairs(data.raw.recipe) do
       ((recipe.order == nil) or (string.sub(recipe.order, 1, 8) ~= "nullius-")) and
       (string.sub(recipe.name, 1, 13) ~= "fill-nullius-") and
       (string.sub(recipe.name, 1, 14) ~= "empty-nullius-") and
-	  ((recipe.categories == nil or recipe.categories[1] ~= "ee-testing-tool")) and
+	  ((recipe.category ~= "ee-testing-tool") and (recipe.categories == nil or recipe.categories[1] ~= "ee-testing-tool")) and
 	  (string.sub(recipe.name, 1, 5) ~= "bpsb-")) then
     recipe.hidden = true
     recipe.enabled = false
@@ -236,7 +236,7 @@ for _, recipe in pairs(data.raw.recipe) do
 	  recipe.GCKI_ignore = true
 	elseif (((recipe.order == nil) or
 	    (string.sub(recipe.order, 1, 8) ~= "nullius-")) and
-        ((recipe.categories == nil or recipe.categories[1] ~= "ee-testing-tool")) and
+        ((recipe.category ~= "ee-testing-tool") and (recipe.categories == nil or recipe.categories[1] ~= "ee-testing-tool")) and
 	    (string.sub(recipe.name, 1, 5) ~= "bpsb-")) then
       recipe.enabled = false
 	  recipe.allow_as_intermediate = false
