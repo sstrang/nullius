@@ -14,13 +14,13 @@ end
 function save_fluid_contents(entity)
   local ret = { }
   if ((entity ~= nil) and entity.valid) then
-    -- Factorio 2.1: get_fluid_box_prototype requires an index argument
-    -- (returns nil past the last fluid box), and the old #entity.fluidbox
-    -- count is gone. Iterate indices until the prototype lookup returns nil.
-    local i = 1
-    while entity.get_fluid_box_prototype(i) ~= nil do
+    -- Factorio 2.1: get_fluid_box_prototype requires an index and THROWS on
+    -- out-of-range (it does not return nil). Count boxes via the prototype's
+    -- fluidbox_prototypes array instead, then read each box's contents.
+    local protos = entity.prototype.fluidbox_prototypes
+    local count = (protos ~= nil) and #protos or 0
+    for i = 1, count do
       ret[i] = entity.get_fluid(i)
-      i = i + 1
     end
   end
   return ret
