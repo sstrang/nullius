@@ -489,6 +489,7 @@ data:extend({
     open_sound = sounds.steam_open,
     close_sound = sounds.steam_close,
     
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = {
@@ -743,6 +744,7 @@ data:extend({
     open_sound = sounds.steam_open,
     close_sound = sounds.steam_close,
     
+    use_mirroring = true,
     graphics_set = {
       working_visualisations = data.raw["assembling-machine"]["nullius-combustion-chamber-1"].graphics_set.working_visualisations,
       animation = {
@@ -876,6 +878,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["nullius-combustion-chamber"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
     
+    use_mirroring = true,
     graphics_set = {
       working_visualisations = data.raw["assembling-machine"]["nullius-combustion-chamber-2"].graphics_set.working_visualisations,
       animation = {
@@ -3840,6 +3843,7 @@ data:extend({
       heat_picture = data.raw.boiler["heat-exchanger"].energy_source.heat_picture
     },
     energy_usage = "1.8MW",
+    use_mirroring = true,
     graphics_set = {
       animation = {
         north = util.table.deepcopy(data.raw.boiler["heat-exchanger"].pictures.north.structure),
