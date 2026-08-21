@@ -17,6 +17,15 @@ Date: 21.08.2026
   Compatibility:
     - New upstream mod support (Display Plates Forked, companion-drones-mjlfix,
       ShuttleTrainRefresh) and GCKI patch carried over, verified for 2.1
+  Bugfixes:
+    - Added 2.1.1 migration for existing 2.1.0 test saves, so upstream's recipe
+      renames (display plates, companion drones, Large Tank 3) apply to them
+      (upstream's 2.0.x migrations never ran on fork saves)
+    - Fixed solar collector max_health referencing a nil global (upstream typo)
+    - Solar collectors: added 2.1 neighbour_connectable definitions so the +10%
+      neighbour bonus applies (2.1 removed edge-touching reactor connections)
+    - 2.1 fixes carried onto the merged code: compressors/furnaces flippable,
+      checkpoint fluid-segment measurement via the new entity-level fluid APIs
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.0
 Date: 13.08.2026
