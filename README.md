@@ -27,8 +27,9 @@ see [Reporting bugs](#reporting-bugs) below.
 the `nullius/` subdirectory (the repo also bundles the `safefill/` and
 `train-upgrader/` mods). You cannot just drop the whole repo into your mods
 folder — Factorio looks for `info.json` at the top level and will silently
-ignore it. The final folder must be named `nullius_2.1.0` (that's the
-`name_version` format Factorio expects).
+ignore it. The final folder must be named `nullius_2.1.1` (that's the
+`name_version` format Factorio expects — bump the version when the mod
+version changes).
 
 ### No command line? Point-and-click method
 
@@ -42,19 +43,23 @@ ignore it. The final folder must be named `nullius_2.1.0` (that's the
    - macOS: in Finder press <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> and
      paste `~/Library/Application Support/factorio/mods`
    - Linux: `~/.factorio/mods`
-5. Rename the copied folder from `nullius` to **`nullius_2.1.0`**.
-6. Start Factorio, go to **Mods** in the main menu, and tick the Nullius
+5. Rename the copied folder from `nullius` to **`nullius_2.1.1`**.
+6. Delete any older `nullius_2.1.x` folder from the mods directory first,
+   so Factorio doesn't load two copies.
+7. Start Factorio, go to **Mods** in the main menu, and tick the Nullius
    checkbox to enable it (the game will also list any missing dependency
    mods — install those from the mod portal and it'll work).
 
-To update later: repeat steps 1–5, replacing the old `nullius_2.1.0` folder.
+To update later: delete the old `nullius_2.1.x` folder, then repeat steps
+1–5. (Skipping the delete is what causes the "mixed version" symptoms
+described in [Troubleshooting](#troubleshooting) below.)
 
 ### Terminal method (macOS/Linux)
 
 ```bash
-cd ~/Library/Application\ Support/factorio/mods   # Linux: ~/.factorio/mods
+cd ~/Library/Application\ Support/factorio/mods
 git clone https://github.com/sstrang/nullius.git nullius-src
-ln -s nullius-src/nullius nullius_2.1.0
+ln -s nullius-src/nullius nullius_2.1.1
 ```
 
 To update later:
@@ -63,13 +68,56 @@ To update later:
 cd nullius-src && git pull
 ```
 
+The symlink makes updates atomic — the version in the mod list always
+matches the repo checkout, so mixed-version installs can't happen this way.
+
 ### Terminal method (Windows)
 
 ```bash
 cd %APPDATA%\Factorio\mods
 git clone https://github.com/sstrang/nullius.git
-xcopy /E /I nullius\nullius nullius_2.1.0
+xcopy /E /I nullius\nullius nullius_2.1.1
 ```
+
+## Troubleshooting
+
+### "Unknown fluid name: nullius-solar-flux" (or the crash dialog says 2.1.0 while a 2.1.1 error is shown)
+
+Your mods folder has a **mixed install**: some files from an old version,
+some from the new one. Factorio read the old `info.json` (so the dialog
+reports 2.1.0) but executed new scripts (so the traceback names files that
+only exist in 2.1.1). This happens when an old `nullius_2.1.0` folder or a
+stale copy is still sitting in the mods directory alongside the new one.
+
+Fix — remove every nullius entry and reinstall cleanly:
+
+```bash
+cd ~/Library/Application\ Support/factorio/mods
+ls | grep nullius
+```
+
+Delete everything that lists (`rm -rf <name>` for folders, `rm <name>` for
+symlinks — a symlink is just a link, `rm` never touches what it points
+at), then redo the install steps above. Verify afterwards with:
+
+```bash
+cat nullius_2.1.1/info.json | grep version
+```
+
+It must print the version you expect, and `ls | grep nullius` should show
+exactly one install (plus the `nullius-src` clone if you used the terminal
+method).
+
+### The mod doesn't show up in the mod list at all
+
+You probably copied the whole repo instead of the inner `nullius/`
+directory — see the note at the top of [Installation](#installation).
+
+### zsh shows `quote>` and the command doesn't run
+
+zsh doesn't enable `#` comments in interactive shells by default. Run
+`echo 'setopt interactivecomments' >> ~/.zshrc && source ~/.zshrc` once to
+fix, or just paste commands without the comment portions.
 
 ## Reporting bugs
 
