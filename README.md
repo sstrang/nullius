@@ -20,6 +20,8 @@ see [Reporting bugs](#reporting-bugs) below.
   - `configurable-valves`
 - All the optional dependencies from the official mod work too, but aren't
   required.
+- Cybersyn 2 (`cybersyn2`) is also supported: with it installed, the Cybernetic
+  combinator is unlocked by Traffic control and crafted in the railway tab.
 
 ## Installation
 

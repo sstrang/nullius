@@ -2495,6 +2495,30 @@ if mods["cybersyn-combinator"] then
   }
 end
 
+if mods["cybersyn2"] then
+  -- Cybersyn 2 unlocks its combinator from base automated-rail-transportation,
+  -- which hidden.lua disables, leaving the recipe craftable with no research.
+  -- Its own compat file gives the recipe and item a "nullius-" order (so they
+  -- survive the hiding passes) but never re-anchors the unlock, so do that
+  -- here: gate it behind Traffic control, next to the LTN combinator.
+  local item = data.raw.item["cybersyn2-combinator"]
+  if item ~= nil then
+    item.subgroup = "railway"
+    item.order = "nullius-eb-cybersyn2"
+  end
+  local recipe = data.raw.recipe["cybersyn2-combinator"]
+  if recipe ~= nil then
+    recipe.enabled = false
+    recipe.subgroup = "railway"
+    recipe.order = "nullius-eb-cybersyn2"
+    local tech = data.raw.technology["nullius-traffic-control"]
+    if tech ~= nil then
+      table.insert(tech.effects,
+          {type = "unlock-recipe", recipe = "cybersyn2-combinator"})
+    end
+  end
+end
+
 if mods["cargo-drone"] then
 data:extend({
   {

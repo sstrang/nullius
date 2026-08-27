@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.2
+Date: 27.08.2026
+  Compatibility:
+    - Cybersyn 2: the Cybernetic combinator is now unlocked by Traffic control,
+      sorted into the railway tab, and disabled until researched. (Previously
+      its unlock sat on the hidden vanilla automated rail transportation tech,
+      leaving it craftable from the start with no research.)
+---------------------------------------------------------------------------------------------------
 Version: 2.1.1
 Date: 21.08.2026
   Features:

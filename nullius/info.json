@@ -1,6 +1,6 @@
 {
   "name": "nullius",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "factorio_version": "2.1",
   "title": "Nullius",
   "author": "Anachrony",
@@ -35,6 +35,7 @@
 	"(?) railway-motor-car >= 0.6.0",
 	"(?) LogisticTrainNetwork >= 2.3.4",
 	"(?) LTN_Combinator_Modernized >= 2.2.5",
+	"(?) cybersyn2 >= 0.3.3",
 	"(?) aai-signal-transmission >= 0.5.1",
 	"(?) train-pubsub >= 2.0.7",
 	"(?) textplates >= 0.7.2",
