@@ -5301,7 +5301,7 @@ data.raw.item["processed-fuel"].icon = ICONPATH .. "canister-methanol.png"
 data.raw.item["processed-fuel"].icon_size = 64
 data.raw.item["processed-fuel"].subgroup = "canisters"
 data.raw.item["processed-fuel"].order = "nullius-e"
-data.raw.item["processed-fuel"].fuel_category = "vehicle"
+data.raw.item["processed-fuel"].fuel_categories = { "vehicle" }
 data.raw.item["processed-fuel"].fuel_value = "15MJ"
 data.raw.item["processed-fuel"].fuel_acceleration_multiplier = 1.4
 data.raw.item["processed-fuel"].fuel_top_speed_multiplier = 1.2
@@ -5317,7 +5317,7 @@ data:extend({
     icon_size = 64,
     subgroup = "canisters",
     order = "nullius-e",
-    fuel_category = "vehicle",
+    fuel_categories = { "vehicle" },
     fuel_value = "15MJ",
     fuel_acceleration_multiplier = 1.4,
     fuel_top_speed_multiplier = 1.2,
@@ -5335,7 +5335,7 @@ data:extend({
     icon_size = 64,
     subgroup = "canisters",
     order = "nullius-d",
-    fuel_category = "vehicle",
+    fuel_categories = { "vehicle" },
     fuel_value = "5MJ",
     fuel_acceleration_multiplier = 1,
     fuel_top_speed_multiplier = 1,
@@ -5349,7 +5349,7 @@ data:extend({
     icon_size = 64,
     subgroup = "canisters",
     order = "nullius-f",
-    fuel_category = "vehicle",
+    fuel_categories = { "vehicle" },
     fuel_value = "50MJ",
     fuel_acceleration_multiplier = 1.8,
     fuel_top_speed_multiplier = 1.4,
@@ -7742,7 +7742,7 @@ data:extend({
     name = "nullius-aneutronic-cell",
     icon = ICONPATH .. "aneutronic-cell.png",
     icon_size = 64,
-    fuel_category = "nullius-nuclear",
+    fuel_categories = { "nullius-nuclear" },
     burnt_result = "nullius-spent-fusion-cell",
     fuel_value = "1GJ",
     fuel_acceleration_multiplier = 1.6,
@@ -7757,7 +7757,7 @@ data:extend({
     name = "nullius-fusion-cell",
     icon = ICONPATH .. "fusion-cell.png",
     icon_size = 64,
-    fuel_category = "nullius-nuclear",
+    fuel_categories = { "nullius-nuclear" },
     burnt_result = "nullius-spent-fusion-cell",
     fuel_value = "3GJ",
     fuel_acceleration_multiplier = 2,
@@ -7781,7 +7781,7 @@ data:extend({
     name = "nullius-breeder-cell",
     icon = ICONPATH .. "breeder-cell.png",
     icon_size = 64,
-    fuel_category = "nullius-nuclear",
+    fuel_categories = { "nullius-nuclear" },
     burnt_result = "nullius-spent-breeder-cell",
     fuel_value = "500MJ",
     fuel_acceleration_multiplier = 1.4,

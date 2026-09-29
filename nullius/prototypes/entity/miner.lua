@@ -482,9 +482,7 @@ data:extend({
       animation_progress = 1,
 
       status_colors = data.raw["mining-drill"]["electric-mining-drill"].graphics_set.status_colors,
-      circuit_connector_layer = "object",
-      circuit_connector_secondary_draw_order = { north = 14, east = 30, south = 30, west = 30 },
-
+            
       animation = {
         north = {
           layers = {
@@ -933,9 +931,7 @@ data:extend({
       animation_progress = 1,
 
       status_colors = data.raw["mining-drill"]["electric-mining-drill"].graphics_set.status_colors,
-      circuit_connector_layer = "object",
-      circuit_connector_secondary_draw_order = { north = 14, east = 30, south = 30, west = 30 },
-
+            
       animation = {
         north = {
           layers = {
@@ -1162,9 +1158,7 @@ data:extend({
       animation_progress = 1,
       
       status_colors = data.raw["mining-drill"]["electric-mining-drill"].graphics_set.status_colors,
-      circuit_connector_layer = "object",
-      circuit_connector_secondary_draw_order = { north = 14, east = 30, south = 30, west = 30 },
-
+            
       animation = {
         north = {
           layers = {
@@ -1520,9 +1514,7 @@ data:extend({
 
       status_colors = data.raw["mining-drill"]["electric-mining-drill"].graphics_set.status_colors,
 
-      circuit_connector_layer = "object",
-      circuit_connector_secondary_draw_order = { north = 14, east = 30, south = 30, west = 30 },
-
+            
       animation = {
         north = {
           layers = {
@@ -2152,9 +2144,7 @@ data:extend({
       drilling_vertical_movement_duration = 10 / 0.4,
       animation_progress = 1,
       status_colors = data.raw["mining-drill"]["electric-mining-drill"].graphics_set.status_colors,
-      circuit_connector_layer = "object",
-      circuit_connector_secondary_draw_order = { north = 14, east = 30, south = 30, west = 30 },
-
+            
       animation = {
         north = {
           layers = {

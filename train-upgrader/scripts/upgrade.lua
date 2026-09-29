@@ -314,11 +314,20 @@ function do_upgrade_one_carriage(train, station, car, proto, item_grid)
   restore_grid(newcar.grid, grid, station, transfer_grid)
 
   if ((newcar.burner ~= nil) and newcar.burner.valid and
-      (burner_current ~= nil) and (burner_current.fuel_category ~= nil) and
-	  (newcar.burner.fuel_categories[burner_current.fuel_category] == true)) then
+      (burner_current ~= nil) and (burner_current.fuel_categories ~= nil) and
+	  (next(burner_current.fuel_categories) ~= nil)) then
+	local category_ok = false
+	for fcat, _ in pairs(burner_current.fuel_categories) do
+	  if (newcar.burner.fuel_categories[fcat] == true) then
+		category_ok = true
+		break
+	  end
+	end
+	if (category_ok) then
 	newcar.burner.currently_burning = burner_current
 	if (burner_remaining ~= nil) then
 	  newcar.burner.remaining_burning_fuel = burner_remaining
+	end
 	end
   end
 
@@ -477,15 +486,24 @@ function try_upgrade_one_carriage(carriage, train, station, doit)
 			end
 	      end
 
-		  if ((burner ~= nil) and (item_proto.fuel_category ~= nil) and
-			  (item_proto.fuel_value > 0) and
-			  (burner.fuel_categories[item_proto.fuel_category] == true)) then
+		  if ((burner ~= nil) and (item_proto.fuel_categories ~= nil) and
+			  (next(item_proto.fuel_categories) ~= nil) and
+			  (item_proto.fuel_value > 0)) then
+			local category_ok = false
+			for fcat, _ in pairs(item_proto.fuel_categories) do
+			  if (burner.fuel_categories[fcat] == true) then
+				category_ok = true
+				break
+			  end
+			end
+			if (category_ok) then
 			if (fuel_supply == nil) then fuel_supply = { } end
 			local old_count = fuel_supply[supply_name]
 			if (old_count ~= nil) then
 			  supply_count = supply_count + old_count
 			end
 			fuel_supply[supply_name] = supply_count
+			end
 		  end
 		end
       end
